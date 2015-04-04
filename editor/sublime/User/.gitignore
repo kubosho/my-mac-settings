@@ -1,0 +1,11 @@
+# Sublime Text
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+
+GoSublime/osx-x64/
+Go.sublime-build
+bh_unicode_properties.cache

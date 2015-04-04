@@ -1,0 +1,29 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoFileName",
+		"BracketHighlighter",
+		"CSS Snippets",
+		"DocBlockr",
+		"Emmet",
+		"GitHub Flavored Markdown Preview",
+		"GoSublime",
+		"HTML5",
+		"Jade",
+		"JavaScriptNext - ES6 Syntax",
+		"jQuery",
+		"JSHint Gutter",
+		"Local History",
+		"Markdown Extended",
+		"OmniMarkupPreviewer",
+		"Package Control",
+		"SublimeCodeIntel",
+		"Tag",
+		"Theme - Glacier",
+		"Theme - Soda",
+		"WordCount"
+	]
+}
