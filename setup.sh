@@ -2,8 +2,9 @@
 
 readonly ROOT_DIR=`git rev-parse --show-toplevel`
 
-readonly DOT_FILES_DIR=$ROOT_DIR/dotfiles
-readonly EDITOR_SETTINGS_DIR=$ROOT_DIR/editor
+$ROOT_DIR/dotfiles/setup.sh
+$ROOT_DIR/editor/setup.sh
 
-$DOT_FILES_DIR/setup.sh
-$EDITOR_SETTINGS_DIR/setup.sh
+if [ "$(uname)" == 'Darwin' ]; then
+  $ROOT_DIR/osx/setup.sh
+fi
