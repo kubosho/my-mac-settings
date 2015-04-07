@@ -37,6 +37,7 @@
   ci = commit
   co = checkout
   br = branch
+  logg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
 
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -50,7 +51,7 @@
   protocol = https
 
 [ghq]
-  root = $HOME/src
+  root = ~/src
 
 [filter "hawser"]
   clean = git hawser clean %f
