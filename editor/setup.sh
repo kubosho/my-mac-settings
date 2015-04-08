@@ -6,7 +6,8 @@ if [ $CURRENT_DIR != $PWD ]; then
   cd $CURRENT_DIR
 fi
 
-cd $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/
-rm -rf User
-ln -s $CURRENT_DIR/sublime/User
-
+if [ "$(uname)" == 'Darwin' ]; then
+  cd $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/
+  rm -rf User
+  ln -s $CURRENT_DIR/sublime/User
+fi

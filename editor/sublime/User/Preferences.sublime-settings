@@ -1,7 +1,18 @@
 {
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".",
+			"selector": "source.js"
+		},
+		{
+			"characters": "<",
+			"selector": "text.html"
+		}
+	],
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/JavaScriptNext - ES6 Syntax/Monokai Phoenix.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Seti (SL).tmTheme",
 	"disable_formatted_linebreak": true,
 	"draw_indent_guides": true,
 	"draw_white_space": "all",
@@ -20,6 +31,9 @@
 	"jsdocs_extend_double_slash": false,
 	"tab_completion": true,
 	"tab_size": 4,
+	"tern_argument_completion": true,
+	"tern_argument_hints": true,
+	"theme": "Seti.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true,

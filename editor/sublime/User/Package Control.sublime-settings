@@ -4,11 +4,20 @@
 	],
 	"installed_packages":
 	[
+		"AdvancedNewFile",
+		"All Autocomplete",
 		"AutoFileName",
+		"BoundKeys",
 		"BracketHighlighter",
+		"BufferScroll",
+		"Can I Use",
 		"CSS Snippets",
 		"DocBlockr",
+		"Dotfiles Syntax Highlighting",
+		"EditorConfig",
 		"Emmet",
+		"Focus Last Tab",
+		"GitGutter",
 		"GitHub Flavored Markdown Preview",
 		"GoSublime",
 		"HTML5",
@@ -20,10 +29,16 @@
 		"Markdown Extended",
 		"OmniMarkupPreviewer",
 		"Package Control",
+		"Seti_UI",
+		"sublime-github",
 		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SyncedSideBar",
 		"Tag",
 		"Theme - Glacier",
 		"Theme - Soda",
+		"TodoReview",
+		"TrailingSpaces",
 		"WordCount"
 	]
 }
