@@ -10,7 +10,8 @@ if [ "$(uname)" == 'Darwin' ]; then
   cd $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/
   rm -rf User
   ln -s $CURRENT_DIR/sublime/User
-elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then                                                                                           
+  defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
+elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
   cd $HOME/AppData/Roaming/Sublime\ Text\ 3/Packages/
   rm -rf User
   ln -s $CURRENT_DIR/sublime/User
