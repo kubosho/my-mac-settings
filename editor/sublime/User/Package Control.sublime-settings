@@ -33,6 +33,7 @@
 		"sublime-github",
 		"SublimeCodeIntel",
 		"SublimeLinter",
+		"SublimeLinter-contrib-tslint",
 		"SyncedSideBar",
 		"Tag",
 		"Theme - Glacier",
