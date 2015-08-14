@@ -16,14 +16,23 @@ alias v="vim"
 
 ##################################################
 
-source $HOME/.profile
-export ZSH=$HOME/.oh-my-zsh
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-ZSH_THEME="o2project"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
 export EDITOR='vim'
+
+# PostgreSQL Settings
+echo 'export ARCHFLAGS="-arch x86_64"' >> ~/.zprofile
+echo 'export PGDATA="/usr/local/var/postgres"' >> ~/.zprofile
 
 # ghq + peco
 # http://weblog.bulknews.net/post/89635306479/ghq-peco-percol
@@ -83,3 +92,39 @@ setopt correct
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
+
+# http://blog.livedoor.jp/sonots/archives/38589335.html
+net_tools_deprecated_message () {
+    echo -n 'net-tools コマンドはもう非推奨ですよ？おじさんなんじゃないですか？ '
+}
+
+arp () {
+    net_tools_deprecated_message
+      echo 'Use `ip n`'
+}
+ifconfig () {
+    net_tools_deprecated_message
+      echo 'Use `ip a`, `ip link`, `ip -s link`'
+}
+iptunnel () {
+    net_tools_deprecated_message
+      echo 'Use `ip tunnel`'
+}
+iwconfig () {
+    echo -n 'iwconfig コマンドはもう非推奨ですよ？おじさんなんじゃないですか？ '
+      echo 'Use `iw`'
+}
+nameif () {
+    net_tools_deprecated_message
+      echo 'Use `ip link`, `ifrename`'
+}
+netstat () {
+    net_tools_deprecated_message
+      echo 'Use `ss`, `ip route` (for netstat -r), `ip -s link` (for netstat -i), `ip maddr` (for netstat -g)'
+}
+route () {
+    net_tools_deprecated_message
+      echo 'Use `ip r`'
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

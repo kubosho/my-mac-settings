@@ -6,11 +6,12 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # homebrew
 export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/bin:/usr/bin
 export PATH=/usr/local/sbin:$PATH
-
-# key repeat
-export PATH=$PATH:/usr/local/redpen/bin
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/bin:$PATH
+export PATH=/usr/sbin:$PATH
+export PATH=/bin:$PATH
+export PATH=/sbin:$PATH
 
 # my directory
 export PATH=$HOME/bin:$PATH
@@ -34,3 +35,11 @@ export PATH=$HOME/Library/Haskell/bin:$PATH
 
 # JDK
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
+
+# redpen
+export PATH=/usr/local/redpen/bin:$PATH
+
+export ARCHFLAGS="-arch x86_64"
+export PGDATA="/usr/local/var/postgres"
+export ARCHFLAGS="-arch x86_64"
+export PGDATA="/usr/local/var/postgres"

@@ -39,7 +39,7 @@ set smartcase
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-set backupdir=EE/Et/mEp/vim-backup
+set backupdir=~/.vim-backup/
 set clipboard=unnamed,autoselect
 set noswapfile
 
