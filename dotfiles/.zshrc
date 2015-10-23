@@ -81,6 +81,35 @@ setopt correct
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+    zstyle ':vcs_info:*' formats       \
+        '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+        zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+        zstyle ':vcs_info:*' enable git cvs svn
+
+# or use pre_cmd, see man zshcontrib
+vcs_info_wrapper() {
+    vcs_info
+      if [ -n "$vcs_info_msg_0_" ]; then
+            echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+              fi
+}
+
+# プロンプト指定
+PROMPT='
+[%n] %{${fg[yellow]}%}%~%{${reset_color}%} %1(v|%F{green}%1v%f|) $(vcs_info_wrapper)
+%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'\''-'\'') <!(*;-;%)? <)%{${reset_color}%} '
+
+# プロンプト指定(コマンドの続き)
+PROMPT2='[%n]> '
+
+# もしかして時のプロンプト指定
+SPROMPT="%{$fg[red]%}%{$suggest%}(*'~'%)? < もしかして %B%r%b %{$fg[red]%}かな? [そう!(y), 違う!(n),a,e]:${reset_color} "
+
 # http://blog.livedoor.jp/sonots/archives/38589335.html
 net_tools_deprecated_message () {
     echo -n 'net-tools コマンドはもう非推奨ですよ？おじさんなんじゃないですか？ '
