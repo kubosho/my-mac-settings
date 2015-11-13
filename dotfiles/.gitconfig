@@ -38,6 +38,7 @@
   co = checkout
   br = branch
   logg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
+	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
