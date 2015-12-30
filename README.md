@@ -1,6 +1,10 @@
 My PC settings
 ==============
 
+Dependecies
+
+- Git
+
 Setup
 
 ```shell
