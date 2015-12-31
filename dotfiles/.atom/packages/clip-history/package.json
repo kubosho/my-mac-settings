@@ -1,0 +1,92 @@
+{
+  "name": "clip-history",
+  "main": "./lib/main",
+  "version": "0.1.12",
+  "description": "Paste from clipboard history like emacs' kill-ring",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t9md/atom-clip-history.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-config-plus": "^0.1.2",
+    "underscore-plus": "^1.6.6"
+  },
+  "readme": "# clip-history [![Build Status](https://travis-ci.org/t9md/atom-clip-history.svg)](https://travis-ci.org/t9md/atom-clip-history)\n\nPaste from clipboard history like emacs' kill-ring\n\n![gif](https://raw.githubusercontent.com/t9md/t9md/2453c4abea50741938bce79b9087e4845e8b66d1/img/atom-clip-history.gif)\n\n# Features\n\n* Paste old clipboard entry.\n* Keep layout of multi line text when pasted(enabled by default).\n* Visually highlight(flash) pasted range.\n* Also you can choose flash to be persisted until cursor move.\n* Support multiple cursor.\n\n# Commands\n\n* `clip-history:paste`: Paste. Continuous execution without moving cursor pops older entry.\n* `clip-history:paste-newer`: Paste. Continuous execution without moving cursor pops newer entry.\n* `clip-history:paste-last`: Paste last pasted text.\n* `clip-history:clear`: Clear clipboard history.\n\n# How to use\n\n1. Paste clipboard entry by `clip-history:paste`\n2. Continue `clip-history:paste` until you get entry you want.\n3. (optional) when you get passed the text you wanted to paste, use `clip-history:paste-newer`.\n4. (optional) you can paste last pasted text with `clip-history:paste-last`.\n\n# Keymap\nNo keymap by default.\n\ne.g.\n\n```coffeescript\n'atom-text-editor:not([mini])':\n  'ctrl-y': 'clip-history:paste'\n  'cmd-y': 'clip-history:paste-newer'\n  'ctrl-Y': 'clip-history:paste-last'\n```\n\n# Similar packages\n* [kill-ring](https://atom.io/packages/kill-ring)\n* [clipboard-plus](https://atom.io/packages/clipboard-plus)\n* [clipboard-history](https://atom.io/packages/clipboard-history)\n\n# TODO\n\n* [x] Make configurable flash duration.\n* [x] Multi cursor support\n* [x] Use marker instead of range to track original range in multi cursor situation.\n* [x] Adjust proceeding space to keep layout.\n* [x] Sync system's clipboard update.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/t9md/atom-clip-history/issues"
+  },
+  "homepage": "https://github.com/t9md/atom-clip-history#readme",
+  "_id": "clip-history@0.1.12",
+  "_shasum": "6bd9d2d6de814ed10e3047f243517594c5f5324a",
+  "_resolved": "file:../d-11601-11624-uzg0fc/package.tgz",
+  "_from": "../d-11601-11624-uzg0fc/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "atom-config-plus",
+        "version": "0.1.2",
+        "path": "node_modules/atom-config-plus/lib/index.js"
+      },
+      {
+        "name": "underscore-plus",
+        "version": "1.6.6",
+        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      },
+      {
+        "name": "underscore",
+        "version": "1.6.0",
+        "path": "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+      }
+    ],
+    "extensions": {
+      ".json": [
+        "coffeelint.json",
+        "node_modules/atom-config-plus/package.json",
+        "node_modules/underscore-plus/node_modules/underscore/package.json",
+        "node_modules/underscore-plus/package.json",
+        "package.json"
+      ],
+      ".coffee": [
+        "lib/history.coffee",
+        "lib/main.coffee",
+        "lib/settings.coffee",
+        "lib/utils.coffee"
+      ],
+      ".js": [
+        "node_modules/atom-config-plus/lib/index.js",
+        "node_modules/underscore-plus/lib/underscore-plus.js",
+        "node_modules/underscore-plus/node_modules/underscore/underscore-min.js",
+        "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "",
+          "lib",
+          "spec"
+        ],
+        "dependencies": {
+          "atom-config-plus": "^0.1.2",
+          "underscore-plus": "^1.6.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/underscore-plus/lib",
+          "node_modules/underscore-plus"
+        ],
+        "dependencies": {
+          "underscore": "~1.6.0"
+        }
+      }
+    ]
+  }
+}
