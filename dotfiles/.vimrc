@@ -7,10 +7,6 @@ set background=dark
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-filetype plugin indent on
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set number
 " color number
 " ref: http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
@@ -74,10 +70,13 @@ endif
 " クックック……我の名は暗黒美夢王。Vimを愛し、精神までVimに支配されてしまったものだ。
 " 我が作ったプラグインを使うか？良いだろう。
 " Plugin listを'Shougo/*'で埋め尽くされることを覚悟するんだな、クックック……。
-if !1 | finish | endif
+if 0 | endif
 
 if has('vim_starting')
-  set nocompatible
+  if &compatible
+    set nocompatible
+  endif
+
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
@@ -119,6 +118,8 @@ NeoBundle 'groenewege/vim-less'
 NeoBundle 'Lokaltog/vim-powerline'
 
 call neobundle#end()
+
+filetype plugin indent on
 
 NeoBundleCheck
 
