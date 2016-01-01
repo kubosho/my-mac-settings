@@ -87,7 +87,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Plugins
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle has('lua') ? 'Shougo/neocomplete.vim' : ''
+NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimproc.vim', {
