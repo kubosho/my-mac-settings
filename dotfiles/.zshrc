@@ -18,10 +18,6 @@ alias v="vim"
 
 export EDITOR='vim'
 
-# PostgreSQL Settings
-echo 'export ARCHFLAGS="-arch x86_64"' >> ~/.zprofile
-echo 'export PGDATA="/usr/local/var/postgres"' >> ~/.zprofile
-
 # ghq + peco
 # http://weblog.bulknews.net/post/89635306479/ghq-peco-percol
 function peco-src () {
