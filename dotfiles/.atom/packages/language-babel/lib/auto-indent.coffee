@@ -2,7 +2,8 @@
 fs = require 'fs-plus'
 path = require 'path'
 autoCompleteJSX = require './auto-complete-jsx'
-JSON5 = require 'json5'
+stripJsonComments = require 'strip-json-comments'
+YAML = require 'js-yaml'
 # regex to search for tag open/close tag and close tag
 JSXREGEXP = /(<)([$_A-Za-z](?:[$.\-A-Za-z0-9])*)|(\/>)|(<\/)([$_A-Za-z](?:[$.\-A-Za-z0-9])*)(>)|(>)/g
 
@@ -44,9 +45,9 @@ class AutoIndent
     @autoJsx = true
     @disposables = new CompositeDisposable()
     @disposables.add atom.commands.add 'atom-text-editor',
-      'language-babel:format-react-jsx': (event) => @formatJsxCommand()
+      'language-babel:auto-indent-react-jsx': (event) => @autoIndentJsxCommand()
     @disposables.add atom.commands.add 'atom-text-editor',
-      'language-babel:toggle-auto-jsx': (event) =>  @autoJsx = not @autoJsx
+      'language-babel:toggle-auto-indent-jsx': (event) =>  @autoJsx = not @autoJsx
 
     @atomTabLength = @editor.getTabLength()
 
@@ -69,21 +70,18 @@ class AutoIndent
     endPointOfLine = new Point bufferRow-1, @editor.lineTextForBufferRow(bufferRow-1).length
     startOfJSX =  autoCompleteJSX.getStartOfJSX @editor, endPointOfLine
     endPointOfLine = new Point bufferRow+1, 0
-    indent = @formatJSX new Range(startOfJSX, endPointOfLine)
-    @editor.setIndentationForBufferRow bufferRow, indent, { preserveLeadingWhitespace: false}
-    cursorPos = @editor.getCursorBufferPosition()
-    if cursorPos.column is 0
-      @editor.moveToEndOfLine()
+    indent = @indentJSX new Range(startOfJSX, endPointOfLine)
     indent
 
   # command option to format line from a cursor position upwards to JSX start
-  formatJsxCommand: () ->
+  autoIndentJsxCommand: () ->
     return if atom.workspace.getActiveTextEditor().id isnt @editor.id
     bufferRow = @editor.getCursorBufferPosition().row
     return if not @jsxInScope(bufferRow)
     endPointOfLine = new Point bufferRow, @editor.lineTextForBufferRow(bufferRow).length
     startOfJSX =  autoCompleteJSX.getStartOfJSX @editor, endPointOfLine
-    @formatJSX new Range(startOfJSX, endPointOfLine)
+    @editor.transact 300, =>
+      @indentJSX new Range(startOfJSX, endPointOfLine)
 
   # is the jsx on this line in scope
   jsxInScope: (bufferRow) ->
@@ -93,13 +91,13 @@ class AutoIndent
       scopes = @editor.scopeDescriptorForBufferPosition([bufferRow-1, 0]).getScopesArray()
       # are we at the end of a jsx nest
       if 'meta.tag.jsx' not in scopes
-        false
+        return false
     true
 
   # build stack array of JSX opening & closing objects in Range.
   # open and closed tags are backward linked via index pointers
   # indents to the buffer are applied on the fly
-  formatJSX: (range) ->
+  indentJSX: (range) ->
     tagStack = []
     idxOfTags = 0
     stackOfTagsStillOpen = [] # length equivalent to tag depth
@@ -195,14 +193,13 @@ class AutoIndent
           else if match[3]? # tags ending />
             if isFirstTagOfLine and indentRecalc
               stackOfTagsStillOpen.push parentTagIdx = stackOfTagsStillOpen.pop()
-              # work backwards on property rows
-              if tagStack[parentTagIdx].row+1 <= ( row-1 )
-                for propertyRow in [tagStack[parentTagIdx].row+1..row-1]
-                  @indentRow  propertyRow,
-                    tagStack[parentTagIdx].firstTagInLineIndentation,0,1
-              @indentForClosingBracket  row,
-                tagStack[parentTagIdx],
-                @eslintIndentOptions.jsxClosingBracketLocation[1].selfClosing
+              if firstTagInLineIndentation is firstCharIndentation
+                @indentForClosingBracket  row,
+                  tagStack[parentTagIdx],
+                  @eslintIndentOptions.jsxClosingBracketLocation[1].selfClosing
+              else
+                @indentRow  row,
+                  tagStack[parentTagIdx].firstTagInLineIndentation,0,1
               line = @editor.lineTextForBufferRow row
               JSXREGEXP.test('') #force regex to start again
               indentRecalc = false
@@ -228,14 +225,13 @@ class AutoIndent
           else if match[7]? # tags ending >
             if isFirstTagOfLine and indentRecalc
               stackOfTagsStillOpen.push parentTagIdx = stackOfTagsStillOpen.pop()
-              # work backwards on property rows if any exist
-              if tagStack[parentTagIdx].row+1 <= ( row-1 )
-                for propertyRow in [tagStack[parentTagIdx].row+1..row-1]
-                  @indentRow  propertyRow,
-                    tagStack[parentTagIdx].firstTagInLineIndentation,0,1
-              @indentForClosingBracket  row,
-                tagStack[parentTagIdx],
-                @eslintIndentOptions.jsxClosingBracketLocation[1].nonEmpty
+              if firstTagInLineIndentation is firstCharIndentation
+                @indentForClosingBracket  row,
+                  tagStack[parentTagIdx],
+                  @eslintIndentOptions.jsxClosingBracketLocation[1].nonEmpty
+              else
+                @indentRow  row,
+                  tagStack[parentTagIdx].firstTagInLineIndentation,0,1
               line = @editor.lineTextForBufferRow row
               JSXREGEXP.test('') #force regex to start again
               indentRecalc = false
@@ -259,9 +255,13 @@ class AutoIndent
           tagStack[idxOfTags-1].type is JSXTAG_CLOSE or
           tagStack[idxOfTags-1].type is JSXTAG_SELFCLOSE_END
             @indentRow  row, previousLineIndent
+        if tagStack[idxOfTags-1].type is JSXTAG_OPEN
+            @indentRow  row,
+              tagStack[idxOfTags-1].firstTagInLineIndentation,0,1
+
       previousLineIndent = @editor.indentationForBufferRow row
       if row is range.end.row - 1 # the row that was inserted
-        indent =  @editor.indentationForBufferRow row - 1 # will be returned
+        indent =  @editor.indentationForBufferRow row # will be returned
     indent
 
 
@@ -298,40 +298,53 @@ class AutoIndent
   getEslintrcOptions: (eslintrcFile) ->
     # get local path overides
     if fs.existsSync eslintrcFile
-      fileContent= fs.readFileSync eslintrcFile, 'utf8'
+      fileContent = stripJsonComments(fs.readFileSync(eslintrcFile, 'utf8'))
       try
-        eslintRules = (JSON5.parse fileContent).rules
+        eslintRules = (YAML.safeLoad fileContent).rules
       catch err
         atom.notifications.addError "LB: Error reading .eslintrc at #{eslintrcFile}",
           dismissable: true
           detail: "#{err.message}"
         return
-      if rule = eslintRules['react/jsx-indent']
-        if rule[0]
-          if typeof rule[1] is 'number'
-            @eslintIndentOptions.jsxIndent[1] = rule[1] / @atomTabLength
-        else @eslintIndentOptions.jsxIndent[0] = 1 # 'tab'
 
-      if rule = eslintRules['react/jsx-indent-props']
-        if rule[0]
-          if typeof rule[1] is 'number'
-            @eslintIndentOptions.jsxIndentProps[1] = rule[1] / @atomTabLength
-        else @eslintIndentOptions.jsxIndentProps[0] = 1 # 'tab'
+      return if not eslintRules?
 
-      if rule = eslintRules['react/jsx-closing-bracket-location']
-        if typeof rule is 'number'
-          @eslintIndentOptions.jsxClosingBracketLocation[0] = rule
-        else # must be array!
-          @eslintIndentOptions.jsxClosingBracketLocation[0] = rule[0]
-          if typeof rule[1] is 'string'
-            @eslintIndentOptions.jsxClosingBracketLocation[1].selfClosing =
-              @eslintIndentOptions.jsxClosingBracketLocation[1].nonEmpty =
-                rule[1]
-          else
-            if rule[1].selfClosing?
-              @eslintIndentOptions.jsxClosingBracketLocation[1].selfClosing = rule[1].selfClosing
-            if rule[1].nonEmpty?
-              @eslintIndentOptions.jsxClosingBracketLocation[1].nonEmpty = rule[1].nonEmpty
+      rule = eslintRules['react/jsx-indent']
+      if typeof rule is 'number'
+        @eslintIndentOptions.jsxIndent[0] = rule
+        @eslintIndentOptions.jsxIndent[1] = 4 / @atomTabLength
+      else if typeof rule is 'object'
+        @eslintIndentOptions.jsxIndent[0] = rule[0]
+        if typeof rule[1] is 'number'
+          @eslintIndentOptions.jsxIndent[1] = rule[1] / @atomTabLength
+        else @eslintIndentOptions.jsxIndent[1] = 1
+
+      rule = eslintRules['react/jsx-indent-props']
+      if typeof rule is 'number'
+        @eslintIndentOptions.jsxIndentProps[0] = rule
+        @eslintIndentOptions.jsxIndentProps[1] = 4 / @atomTabLength
+      else if typeof rule is 'object'
+        @eslintIndentOptions.jsxIndentProps[0] = rule[0]
+        if typeof rule[1] is 'number'
+          @eslintIndentOptions.jsxIndentProps[1] = rule[1] / @atomTabLength
+        else @eslintIndentOptions.jsxIndentProps[1] = 1
+
+      rule = eslintRules['react/jsx-closing-bracket-location']
+      @eslintIndentOptions.jsxClosingBracketLocation[1].selfClosing = TAGALIGNED
+      @eslintIndentOptions.jsxClosingBracketLocation[1].nonEmpty = TAGALIGNED
+      if typeof rule is 'number'
+        @eslintIndentOptions.jsxClosingBracketLocation[0] = rule
+      else if typeof rule is 'object' # array
+        @eslintIndentOptions.jsxClosingBracketLocation[0] = rule[0]
+        if typeof rule[1] is 'string'
+          @eslintIndentOptions.jsxClosingBracketLocation[1].selfClosing =
+            @eslintIndentOptions.jsxClosingBracketLocation[1].nonEmpty =
+              rule[1]
+        else
+          if rule[1].selfClosing?
+            @eslintIndentOptions.jsxClosingBracketLocation[1].selfClosing = rule[1].selfClosing
+          if rule[1].nonEmpty?
+            @eslintIndentOptions.jsxClosingBracketLocation[1].nonEmpty = rule[1].nonEmpty
 
   # indent a row by the addition of one or more indents
   # jsxBlockIndent is the indent to the start of this logical jsx block

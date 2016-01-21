@@ -1,6 +1,30 @@
+### 2.11.1
+  - Inadvertently removed JSON5!
+
+### 2.11.0
+  - Support .eslintrc YAML files
+
+### 2.10.0
+  - Change Atom's toggle comments to use `{/*  */}` when inside JSX blocks.
+
+### 2.9.5
+  - Improved indenting
+
+### 2.9.4
+  - Fixes #132
+
+### 2.9.3
+  - Improve .eslintrc parsing
+
+### 2.9.2
+  - Fixes #130 .eslintrc has no rules property.
+
+### 2.9.1
+  - Fixes #126.
+
 ### 2.9.0
   - Use JSON5 to parse .eslintrc
-  
+
 ### 2.8.3
   - incorrect filename reference when notifying a user about invalid JSON in .eslintrc
 
