@@ -1,0 +1,65 @@
+
+
+## ESLint style commit message
+
+# ```
+# Tag: Message (fixes #1234)
+# ```
+
+### Tag
+
+# Fix - for a bug fix.
+# Update - for a backwards-compatible enhancement.
+# Breaking - for a backwards-incompatible enhancement.
+# Docs - changes to documentation only.
+# Build - changes to build process only.
+# New - implemented a new feature.
+# Upgrade - for a dependency upgrade.
+
+# ------------------------------
+
+## Angular style commit message
+
+# ```
+# <type>(<scope>): <subject>
+# <BLANK LINE>
+# <body>
+# <BLANK LINE>
+# <footer>
+# ```
+
+### Type
+
+# feat: A new feature
+# fix: A bug fix
+# docs: Documentation only changes
+# style: Changes that do not affect the meaning of the code (white-space, formatting, missing
+# semi-colons, etc)
+# refactor: A code change that neither fixes a bug nor adds a feature
+# perf: A code change that improves performance
+# test: Adding missing tests or correcting existing tests
+# build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+# ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+# chore: Other changes that don't modify `src` or `test` files
+
+# ------------------------------
+
+## Commit messge example
+
+### ESLint style
+
+# ```
+# Build: Update Travis to only test Node 0.10 (refs #734)
+# Fix: Semi rule incorrectly flagging extra semicolon (fixes #840)
+# Upgrade: Esprima to 1.2, switch to using Esprima comment attachment (fixes #730)
+# ```
+
+### Angular style
+
+# ```
+# fix(router): RouterOutlet loads component twice in a race condition
+# <BLANK LINE>
+# Closes #7497
+# docs(core): update <content> to <ng-content>
+# ```
+
