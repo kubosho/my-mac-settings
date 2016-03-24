@@ -40,6 +40,7 @@ if [ -d $HOME/.anyenv ] ; then
 fi
 
 export PATH=$HOME/.anyenv/envs/ndenv/shims:$PATH
+export PATH=$HOME/go_appengine:$PATH
 
 # PostgreSQL Settings
 export ARCHFLAGS="-arch x86_64"
