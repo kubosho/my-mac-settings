@@ -37,11 +37,17 @@ export PATH=/usr/local/redpen/bin:$PATH
 if [ -d $HOME/.anyenv ] ; then
   export PATH=$HOME/.anyenv/bin:$PATH
   eval "$(anyenv init - zsh)"
+  for D in `ls $HOME/.anyenv/envs`
+    do
+      export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+    done
 fi
 
 export PATH=$HOME/.anyenv/envs/ndenv/shims:$PATH
+
 export PATH=$HOME/go_appengine:$PATH
 
 # PostgreSQL Settings
 export ARCHFLAGS="-arch x86_64"
 export PGDATA="/usr/local/var/postgres"
+
