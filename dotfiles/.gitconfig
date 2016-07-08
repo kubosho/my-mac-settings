@@ -11,6 +11,8 @@
 
 [core]
   editor = vim
+  precomposeunicode = true
+  quotepath = false
 
 [commit]
   template = ~/.gitmessage.txt
