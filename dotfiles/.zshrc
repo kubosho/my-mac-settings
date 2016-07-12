@@ -60,7 +60,11 @@ function precmd () {
 }
 
 # save history file
-HISTFILE=~/.zsh_history
+export SAVEHIST=100000
+export HISTSIZE=1000
+export HISTFILE=${HOME}/.zsh_history
+setopt hist_ignore_dups
+setopt EXTENDED_HISTORY
 
 # 補完
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
