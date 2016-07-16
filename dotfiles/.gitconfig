@@ -13,9 +13,13 @@
   editor = vim
   precomposeunicode = true
   quotepath = false
+	excludesfile = ~/.gitignore
 
 [commit]
   template = ~/.gitmessage.txt
+
+[init]
+  templatedir = ~/.git_template
 
 [push]
   default = simple
