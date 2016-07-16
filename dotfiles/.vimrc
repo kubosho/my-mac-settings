@@ -71,17 +71,13 @@ endif
 
 " dein Scripts
 if &compatible
-  set nocompatible " Be iMproved
+  set nocompatible
 endif
 
-" Required:
-set runtimepath^=./repos/github.com/Shougo/dein.vim
-
-" Required:
-call dein#begin(expand('.'))
+set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
+call dein#begin(expand('~/.cache/dein'))
 
 " Let dein manage dein
-" Required:
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
@@ -98,18 +94,11 @@ call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
 call dein#add('Quramy/tsuquyomi')
 
-" Required:
 call dein#end()
 
-" Required:
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-
-" Poweerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
