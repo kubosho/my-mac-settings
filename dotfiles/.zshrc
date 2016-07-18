@@ -14,6 +14,14 @@ alias g="git"
 alias e="emacs"
 alias v="vim"
 
+setopt nonomatch
+function git-checkout-with-peco() {
+    local branch_name=$(git branch -av | peco | sed -e 's/^..\([^ ]*\).*$/\1/g')
+    git checkout $branch_name
+    git branch
+}
+alias gco='git-checkout-with-peco'
+
 ##################################################
 
 export EDITOR='vim'
@@ -145,3 +153,4 @@ route () {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
