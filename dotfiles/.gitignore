@@ -6,6 +6,7 @@
 .DS_Store
 *.elc
 *.swp
+tags
 
 # Emacs
 .emacs.d/ac-comphist.dat
@@ -27,3 +28,4 @@ Package Control.ca-bundle
 Package Control.system-ca-bundle
 Package Control.cache/
 Package Control.ca-certs/
+
