@@ -13,7 +13,7 @@
   editor = vim
   precomposeunicode = true
   quotepath = false
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 
 [commit]
   template = ~/.gitmessage.txt
@@ -46,6 +46,9 @@
   ci = commit
   co = checkout
   br = branch
+  pl = pull
+  ps = push
+  df = diff
   logg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 
