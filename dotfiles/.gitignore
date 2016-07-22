@@ -6,7 +6,9 @@
 .DS_Store
 *.elc
 *.swp
-tags
+tags*
+.tags*
+.tern-project
 
 # Emacs
 .emacs.d/ac-comphist.dat
