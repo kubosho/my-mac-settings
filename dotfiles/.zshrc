@@ -11,8 +11,10 @@ alias app="open -a"
 
 alias g="git"
 
+alias a="atom"
 alias e="emacs"
 alias v="vim"
+alias tmuxx="tmuxinator"
 
 setopt nonomatch
 function git-checkout-with-peco() {
