@@ -156,3 +156,4 @@ route () {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+source ~/.tmuxinator/tmuxinator.zsh
