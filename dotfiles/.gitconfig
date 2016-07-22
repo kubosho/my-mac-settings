@@ -41,6 +41,7 @@
   remote = green
 
 [alias]
+  ad = add
   st = status
   ft = fetch
   ci = commit
@@ -49,6 +50,7 @@
   pl = pull
   ps = push
   df = diff
+  rb = rebase
   logg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 
