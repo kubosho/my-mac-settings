@@ -43,8 +43,10 @@ if [ -d $HOME/.anyenv ] ; then
 fi
 
 export PATH=$HOME/.anyenv/envs/ndenv/shims:$PATH
-
 export PATH=$HOME/go_appengine:$PATH
+
+# prott
+export PATH=$HOME/src/github.com/goodpatch/prott-commands/bin:$PATH
 
 # PostgreSQL Settings
 export ARCHFLAGS="-arch x86_64"

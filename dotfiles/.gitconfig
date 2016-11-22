@@ -1,6 +1,7 @@
 [user]
   name = kubosho
   email = ta2@o2p.jp
+  signingkey = D846E3AA0F56B753
 
 [color]
   ui = true
@@ -17,6 +18,7 @@
 
 [commit]
   template = ~/.gitmessage.txt
+  gpgSign = true
 
 [init]
   templatedir = ~/.git_template
@@ -53,10 +55,11 @@
   rb = rebase
   logg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+  b = checkout -b
 
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
+  path = 
 
 [mergetool "sourcetree"]
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
@@ -72,4 +75,7 @@
   clean = git hawser clean %f
   smudge = git hawser smudge %f
   required = true
+
+[grep]
+  lineNumber = true
 

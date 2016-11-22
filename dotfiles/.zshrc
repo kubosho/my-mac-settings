@@ -15,6 +15,7 @@ alias a="atom"
 alias e="emacs"
 alias v="vim"
 alias tmuxx="tmuxinator"
+alias 君の名は。=whoami
 
 setopt nonomatch
 function git-checkout-with-peco() {
@@ -23,6 +24,7 @@ function git-checkout-with-peco() {
     git branch
 }
 alias gco='git-checkout-with-peco'
+alias -g LR='`git branch -a | peco --query "remotes/ " --prompt "GIT REMOTE BRANCH>" | head -n 1 | sed "s/^\*\s*//" | sed "s/remotes\/[^\/]*\/\(\S*\)/\1 \0/"`'
 
 ##################################################
 
@@ -157,3 +159,7 @@ route () {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source ~/.tmuxinator/tmuxinator.zsh
+
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+

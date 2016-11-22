@@ -91,6 +91,7 @@ call dein#add('Shougo/vimproc.vim', { 'build': 'make' })
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 call dein#add('justinmk/vim-dirvish')
 call dein#add('pangloss/vim-javascript')
+call dein#add('kchmck/vim-coffee-script')
 call dein#add('mxw/vim-jsx')
 call dein#add('Quramy/tsuquyomi')
 
