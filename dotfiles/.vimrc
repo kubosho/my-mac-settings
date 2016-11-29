@@ -69,46 +69,42 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" dein Scripts
-if &compatible
-  set nocompatible
-endif
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
-call dein#begin(expand('~/.cache/dein'))
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Let dein manage dein
-call dein#add('Shougo/dein.vim')
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-" Add or remove your plugins here:
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('Shougo/neomru.vim')
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/vimproc.vim', { 'build': 'make' })
-" You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-call dein#add('justinmk/vim-dirvish')
-call dein#add('pangloss/vim-javascript')
-call dein#add('kchmck/vim-coffee-script')
-call dein#add('mxw/vim-jsx')
-call dein#add('Quramy/tsuquyomi')
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mxw/vim-jsx'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'digitaltoad/vim-pug'
 
-call dein#end()
-
-filetype plugin indent on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" vim-dirvish
-setf dirvish
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
