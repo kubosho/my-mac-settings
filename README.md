@@ -1,4 +1,4 @@
-My PC settings
+My Mac settings
 ==============
 
 Dependecies
@@ -8,5 +8,5 @@ Dependecies
 Setup
 
 ```shell
-curl -L https://raw.githubusercontent.com/kubosho/my-pc-settings/master/setup.sh | bash
+curl -L https://raw.githubusercontent.com/kubosho/my-mac-settings/master/setup.sh | bash
 ```
