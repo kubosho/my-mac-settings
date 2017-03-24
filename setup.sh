@@ -19,6 +19,7 @@ brew install brew-cask
 brew install bzr
 brew install curl
 brew install git
+brew install go
 brew install hg
 brew install hub
 brew install tig
