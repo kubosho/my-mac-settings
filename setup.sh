@@ -30,7 +30,14 @@ brew install zsh
 brew install the_silver_searcher
 brew install rcmdnk-trash
 
+brew cask install 1password
+brew cask install adobe-creative-cloud
+brew cask install alfred
+brew cask install appcleaner
+brew cask install atom
 brew cask install dropbox
 brew cask install google-chrome
 brew cask install iterm2
+brew cask install visual-studio-code
 
+open /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/
