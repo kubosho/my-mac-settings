@@ -27,13 +27,10 @@ brew install peco
 brew install wget
 brew install z
 brew install zsh
-brew install node-build
-brew install ruby-build
 brew install the_silver_searcher
 brew install rcmdnk-trash
 
 brew cask install dropbox
-brew cask install github
 brew cask install google-chrome
 brew cask install iterm2
 
