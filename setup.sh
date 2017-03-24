@@ -11,7 +11,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap phinze/homebrew-cask
 brew tap rcmdnk/rcmdnkpac
 brew tap homebrew/versions
-brew tap peco/peco
 
 brew update
 brew outdated | xargs brew install
