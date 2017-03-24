@@ -35,8 +35,11 @@ brew cask install adobe-creative-cloud
 brew cask install alfred
 brew cask install appcleaner
 brew cask install atom
+brew cask install docker
 brew cask install dropbox
 brew cask install google-chrome
+brew cask install google-japanese-ime
+brew cask install google-play-music-desktop-player
 brew cask install iterm2
 brew cask install slack
 brew cask install visual-studio-code
