@@ -24,6 +24,7 @@ brew install hg
 brew install hub
 brew install tig
 brew install peco
+brew install redpen
 brew install wget
 brew install z
 brew install zsh
@@ -41,6 +42,7 @@ brew cask install google-chrome
 brew cask install google-japanese-ime
 brew cask install google-play-music-desktop-player
 brew cask install iterm2
+brew cask install java
 brew cask install slack
 brew cask install visual-studio-code
 
