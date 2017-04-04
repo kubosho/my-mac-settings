@@ -30,6 +30,9 @@ brew install z
 brew install zsh
 brew install the_silver_searcher
 brew install rcmdnk-trash
+brew install gnupg2
+brew install gpg-agent
+brew install pinentry-mac
 
 brew cask install 1password
 brew cask install adobe-creative-cloud
