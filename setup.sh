@@ -20,6 +20,7 @@ brew install bzr
 brew install curl
 brew install git
 brew install go
+brew install heroku/brew/heroku
 brew install hg
 brew install hub
 brew install tig
