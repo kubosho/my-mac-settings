@@ -23,6 +23,7 @@ brew install go
 brew install heroku/brew/heroku
 brew install hg
 brew install hub
+brew install node
 brew install tig
 brew install peco
 brew install redpen
@@ -52,3 +53,5 @@ brew cask install slack
 brew cask install visual-studio-code
 
 open /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app/
+
+npm install -g firebase-tools yarn
