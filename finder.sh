@@ -21,3 +21,6 @@ chflags nohidden ~/Library
 
 # Show the hidden files
 defaults write com.apple.finder AppleShowAllFiles YES
+
+# Show the all extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
