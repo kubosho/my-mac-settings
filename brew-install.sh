@@ -14,6 +14,7 @@ brew install curl
 brew install git
 brew install go
 brew install hub
+brew install kubernetes-cli
 brew install tig
 brew install peco
 brew install wget
