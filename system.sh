@@ -9,3 +9,9 @@ defaults write com.apple.menuextra.clock 'DateFormat' -string 'EEE H:mm'
 # Require password immediately after the computer went into sleep or screen saver mode
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# InitialKeyRepeat
+defaults write -g InitialKeyRepeat -int 13
+
+# KeyRepeat
+defaults write -g InitialKeyRepeat -int 4
