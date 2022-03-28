@@ -1,17 +1,17 @@
 #!/bin/sh
 
-brew install google-chrome
-brew install firefox
+brew install --cask google-chrome
+brew install --cask firefox
 
-brew install 1password
-brew install appcleaner
-brew install bettertouchtool
-brew install docker
-brew install dropbox
-brew install figma
-brew install google-cloud-sdk
-brew install iterm2
-brew install karabiner-elements
-brew install slack
-brew install visual-studio-code
-brew install zoom
+brew install --cask 1password
+brew install --cask appcleaner
+brew install --cask bettertouchtool
+brew install --cask docker
+brew install --cask dropbox
+brew install --cask figma
+brew install --cask google-cloud-sdk
+brew install --cask iterm2
+brew install --cask karabiner-elements
+brew install --cask slack
+brew install --cask visual-studio-code
+brew install --cask zoom
