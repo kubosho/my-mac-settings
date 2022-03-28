@@ -20,7 +20,3 @@ brew install peco
 brew install wget
 brew install rcmdnk-trash
 brew install zsh
-
-brew install gnupg2
-brew install gpg-agent
-brew install pinentry-mac
