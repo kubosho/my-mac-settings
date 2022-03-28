@@ -11,4 +11,5 @@ fi
 ./finder.sh
 ./safari.sh
 ./brew-install.sh
+./shell.sh
 ./brew-cask-install.sh
