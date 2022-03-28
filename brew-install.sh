@@ -8,7 +8,6 @@ brew outdated | xargs brew install
 brew tap homebrew/cask
 brew tap rcmdnk/rcmdnkpac
 
-brew install brew-cask
 brew install curl
 brew install git
 brew install go
