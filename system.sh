@@ -13,8 +13,6 @@ defaults write com.apple.menuextra.clock 'DateFormat' -string 'EEE H:mm'
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# InitialKeyRepeat
-defaults write -g InitialKeyRepeat -int 13
-
-# KeyRepeat
-defaults write -g InitialKeyRepeat -int 4
+# KeyRepeat speed
+defaults write -g InitialKeyRepeat -int 12
+defaults write -g KeyRepeat -int 2
