@@ -5,6 +5,7 @@ brew install firefox
 
 brew install 1password
 brew install appcleaner
+brew install bettertouchtool
 brew install docker
 brew install dropbox
 brew install figma
