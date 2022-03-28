@@ -1,13 +1,12 @@
 #!/bin/sh
 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew update
 brew outdated | xargs brew install
 
-brew tap phinze/homebrew-cask
+brew tap homebrew/cask
 brew tap rcmdnk/rcmdnkpac
-brew tap homebrew/versions
 
 brew install brew-cask
 brew install curl
@@ -19,6 +18,8 @@ brew install tig
 brew install peco
 brew install wget
 brew install rcmdnk-trash
+brew install zsh
+
 brew install gnupg2
 brew install gpg-agent
 brew install pinentry-mac
