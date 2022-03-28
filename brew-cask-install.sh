@@ -7,6 +7,7 @@ brew install 1password
 brew install appcleaner
 brew install docker
 brew install dropbox
+brew install figma
 brew install google-cloud-sdk
 brew install iterm2
 brew install karabiner-elements
