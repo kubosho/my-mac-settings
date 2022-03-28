@@ -9,6 +9,7 @@ brew tap homebrew/cask
 brew tap rcmdnk/rcmdnkpac
 
 brew install curl
+brew install ghq
 brew install git
 brew install go
 brew install hub
