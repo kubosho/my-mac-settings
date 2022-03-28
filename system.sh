@@ -3,6 +3,9 @@
 # Avoid creating `.DS_Store` files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+# Auto hide dock
+defaults write com.apple.dock "autohide" -bool "true" && killall Dock
+
 # Date options: Show the day of the week
 defaults write com.apple.menuextra.clock 'DateFormat' -string 'EEE H:mm'
 
