@@ -16,6 +16,7 @@ brew install --cask google-cloud-sdk
 brew install --cask iterm2
 brew install --cask karabiner-elements
 brew install --cask logitech-g-hub
+brew install --cask obsidian
 brew install --cask slack
 brew install --cask visual-studio-code
 brew install --cask zoom
