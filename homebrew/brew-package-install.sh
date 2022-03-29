@@ -1,15 +1,7 @@
 #!/bin/sh
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-brew update
-brew outdated | xargs brew install
-
-brew tap homebrew/cask
-brew tap homebrew/cask-fonts
-brew tap rcmdnk/rcmdnkpac
-
 brew install curl
+brew install direnv
 brew install ghq
 brew install git
 brew install go

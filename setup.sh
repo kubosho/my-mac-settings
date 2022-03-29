@@ -10,8 +10,10 @@ fi
 ./dock.sh
 ./finder.sh
 ./safari.sh
-./brew-install.sh
+./homebrew/brew-install.sh
+./homebrew/brew-update.sh
+./homebrew/brew-package-install.sh
+./homebrew/brew-cask-install.sh
 ./shell.sh
-./brew-cask-install.sh
 ./vim.sh
 ./vscode.sh
