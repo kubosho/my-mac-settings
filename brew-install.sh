@@ -16,6 +16,7 @@ brew install hub
 brew install nvm
 brew install kubernetes-cli
 brew install tig
+brew install tmux
 brew install peco
 brew install wget
 brew install rcmdnk-trash
