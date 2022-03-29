@@ -6,6 +6,7 @@ brew update
 brew outdated | xargs brew install
 
 brew tap homebrew/cask
+brew tap homebrew/cask-fonts
 brew tap rcmdnk/rcmdnkpac
 
 brew install curl

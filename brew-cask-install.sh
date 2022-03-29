@@ -6,6 +6,7 @@ brew install --cask firefox
 brew install --cask 1password
 brew install --cask appcleaner
 brew install --cask bettertouchtool
+brew install --cask font-fira-code
 brew install --cask docker
 brew install --cask dropbox
 brew install --cask figma
