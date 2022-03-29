@@ -15,5 +15,6 @@ fi
 ./homebrew/brew-package-install.sh
 ./homebrew/brew-cask-install.sh
 ./shell.sh
+./tmux.sh
 ./vim.sh
 ./vscode.sh
