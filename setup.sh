@@ -14,3 +14,4 @@ fi
 ./shell.sh
 ./brew-cask-install.sh
 ./vim.sh
+./vscode.sh
