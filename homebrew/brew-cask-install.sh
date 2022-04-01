@@ -4,6 +4,7 @@ brew install --cask google-chrome
 brew install --cask firefox
 
 brew install --cask 1password
+brew install --cask alt-tab
 brew install --cask appcleaner
 brew install --cask bettertouchtool
 brew install --cask docker
@@ -14,6 +15,7 @@ brew install --cask font-fira-code
 brew install --cask forticlient
 brew install --cask google-cloud-sdk
 brew install --cask iterm2
+brew install --cask miro
 brew install --cask karabiner-elements
 brew install --cask logitech-g-hub
 brew install --cask obsidian
