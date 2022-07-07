@@ -2,6 +2,7 @@
 
 brew install curl
 brew install direnv
+brew install gh
 brew install ghq
 brew install git
 brew install go
