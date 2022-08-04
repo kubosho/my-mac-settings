@@ -14,6 +14,7 @@ brew install --cask figma
 brew install --cask font-fira-code
 brew install --cask forticlient
 brew install --cask google-cloud-sdk
+brew install --cask imageoptim
 brew install --cask iterm2
 brew install --cask miro
 brew install --cask karabiner-elements
