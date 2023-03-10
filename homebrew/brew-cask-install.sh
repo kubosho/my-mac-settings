@@ -7,7 +7,6 @@ brew install --cask 1password
 brew install --cask alt-tab
 brew install --cask appcleaner
 brew install --cask bettertouchtool
-brew install --cask docker
 brew install --cask dropbox
 brew install --cask elgato-stream-deck
 brew install --cask figma
@@ -20,6 +19,7 @@ brew install --cask miro
 brew install --cask karabiner-elements
 brew install --cask logitech-g-hub
 brew install --cask obsidian
+brew install --cask rancher
 brew install --cask slack
 brew install --cask visual-studio-code
 brew install --cask vnc-viewer
