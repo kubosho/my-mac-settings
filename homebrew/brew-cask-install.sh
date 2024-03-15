@@ -19,4 +19,5 @@ brew install --cask logitech-g-hub
 brew install --cask obsidian
 brew install --cask slack
 brew install --cask visual-studio-code
+brew install --cask warp
 brew install --cask zoom
