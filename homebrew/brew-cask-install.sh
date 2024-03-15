@@ -14,13 +14,9 @@ brew install --cask font-fira-code
 brew install --cask forticlient
 brew install --cask google-cloud-sdk
 brew install --cask imageoptim
-brew install --cask iterm2
-brew install --cask miro
 brew install --cask karabiner-elements
 brew install --cask logitech-g-hub
 brew install --cask obsidian
-brew install --cask rancher
 brew install --cask slack
 brew install --cask visual-studio-code
-brew install --cask vnc-viewer
 brew install --cask zoom
