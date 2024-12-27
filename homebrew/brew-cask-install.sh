@@ -7,6 +7,7 @@ brew install --cask 1password
 brew install --cask alt-tab
 brew install --cask appcleaner
 brew install --cask bettertouchtool
+brew install --cask codeql
 brew install --cask dropbox
 brew install --cask elgato-stream-deck
 brew install --cask figma
