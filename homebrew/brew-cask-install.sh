@@ -7,6 +7,7 @@ brew install --cask 1password
 brew install --cask alt-tab
 brew install --cask bettertouchtool
 brew install --cask codeql
+brew install --cask cursor
 brew install --cask dropbox
 brew install --cask figma
 brew install --cask forticlient
