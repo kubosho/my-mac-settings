@@ -14,6 +14,7 @@ brew install kubernetes-cli
 brew install tig
 brew install tmux
 brew install peco
+brew install pinact
 brew install wget
 brew install wrk
 brew install rcmdnk-trash
