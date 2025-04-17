@@ -15,6 +15,7 @@ brew install --cask google-cloud-sdk
 brew install --cask imageoptim
 brew install --cask karabiner-elements
 brew install --cask obsidian
+brew install --cask proxyman
 brew install --cask slack
 brew install --cask visual-studio-code
 brew install --cask zoom
