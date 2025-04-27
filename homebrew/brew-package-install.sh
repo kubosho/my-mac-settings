@@ -9,7 +9,7 @@ brew install git
 brew install go
 brew install hub
 brew install jq
-brew install nvm
+brew install neovim
 brew install kubernetes-cli
 brew install tig
 brew install tmux
