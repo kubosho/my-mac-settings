@@ -1,6 +1,7 @@
 #!/bin/sh
 
 brew install aws-sam-cli
+brew install cloc
 brew install curl
 brew install direnv
 brew install gh
