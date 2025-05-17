@@ -1,5 +1,6 @@
 #!/bin/sh
 
+brew install asdf
 brew install aws-sam-cli
 brew install cloc
 brew install curl
