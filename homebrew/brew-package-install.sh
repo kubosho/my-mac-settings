@@ -5,6 +5,7 @@ brew install aws-sam-cli
 brew install cloc
 brew install curl
 brew install direnv
+brew install fzf
 brew install gh
 brew install ghq
 brew install git
