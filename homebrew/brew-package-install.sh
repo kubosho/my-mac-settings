@@ -19,6 +19,7 @@ brew install tig
 brew install tmux
 brew install peco
 brew install pinact
+brew install stylua
 brew install wget
 brew install wrk
 brew install rcmdnk-trash
