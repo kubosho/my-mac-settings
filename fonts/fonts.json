@@ -1,0 +1,9 @@
+{
+  "fonts": [
+    {
+      "name": "Bizin Gothic",
+      "url": "https://github.com/yuru7/bizin-gothic/releases/download/v0.0.4/BizinGothic_v0.0.4.zip",
+      "file_pattern": "BizinGothic_v0.0.4/*.ttf"
+    }
+  ]
+}

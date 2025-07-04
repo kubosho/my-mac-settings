@@ -14,5 +14,6 @@ fi
 ./homebrew/brew-update.sh
 ./homebrew/brew-package-install.sh
 ./homebrew/brew-cask-install.sh
+./fonts/font-install.sh
 ./shell.sh
 ./vscode.sh

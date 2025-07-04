@@ -12,6 +12,7 @@ brew install --cask coteditor
 brew install --cask cursor
 brew install --cask dropbox
 brew install --cask figma
+brew install --cask font-inconsolata-nerd-font
 brew install --cask gather
 brew install --cask obsidian
 brew install --cask proxyman
