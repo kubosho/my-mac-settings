@@ -18,4 +18,5 @@ brew install stylua
 brew install wget
 brew install wrk
 brew install rcmdnk-trash
+brew install sheldon
 brew install zsh
