@@ -10,7 +10,6 @@ brew install gh
 brew install ghq
 brew install git
 brew install jq
-brew install mise
 brew install neovim
 brew install tig
 brew install pinact
