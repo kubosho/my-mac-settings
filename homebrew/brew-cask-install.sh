@@ -20,4 +20,3 @@ brew install --cask slack
 brew install --cask ticktick
 brew install --cask visual-studio-code
 brew install --cask wezterm
-brew install --cask zoom
