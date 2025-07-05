@@ -15,6 +15,7 @@ brew install --cask font-inconsolata-nerd-font
 brew install --cask gather
 brew install --cask obsidian
 brew install --cask proxyman
+brew install --cask rectangle
 brew install --cask slack
 brew install --cask ticktick
 brew install --cask visual-studio-code
