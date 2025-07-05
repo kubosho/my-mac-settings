@@ -5,7 +5,6 @@ brew install --cask firefox
 
 brew install --cask 1password
 brew install --cask alt-tab
-brew install --cask bettertouchtool
 brew install --cask bitwarden
 brew install --cask claude
 brew install --cask coteditor
