@@ -10,6 +10,7 @@ brew install gh
 brew install ghq
 brew install git
 brew install gnupg2
+brew install imagemagick
 brew install jq
 brew install neovim
 brew install tig
