@@ -14,6 +14,7 @@ brew install jq
 brew install neovim
 brew install tig
 brew install pinact
+brew install pngquant
 brew install stylua
 brew install wget
 brew install wrk
