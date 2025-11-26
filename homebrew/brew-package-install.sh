@@ -5,6 +5,7 @@ brew install cloc
 brew install curl
 brew install dagger/tap/container-use
 brew install direnv
+brew install dotenvx/brew/dotenvx
 brew install fzf
 brew install gh
 brew install ghq
