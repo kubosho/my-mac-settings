@@ -16,6 +16,7 @@ brew install hashicorp/tap/terraform
 brew install imagemagick
 brew install jq
 brew install neovim
+brew install ni
 brew install tig
 brew install pinact
 brew install pngquant
